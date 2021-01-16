@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayTest {
@@ -61,7 +62,7 @@ public class ArrayTest {
             arr6[i] = arr6[i - 1];
         }
         arr6[insertIndex] = insertNum;
-        System.out.print("新数组为：" + arr6[5]);
+        System.out.print("新数组为：" + Arrays.toString(arr6));
     }
 
     /**
