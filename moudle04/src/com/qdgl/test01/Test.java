@@ -23,6 +23,7 @@ public class Test {
        /* Cat cat = new Cat();
         Animate an = cat;*/
         Animate an = new Cat();
+//        an.scratch(); // 只允许访问Animate本身的方法和属性
         girl.play(an);
 
         /*
@@ -38,5 +39,16 @@ public class Test {
         *
         * 注意: 多态可以提高拓展性,但是不是最好, 反射最好(后续会说)
         * */
+
+        // 变量转型
+        int a = 12;
+        double dd = (double)a;
+        System.out.println(dd);
+
+        // 将Animate转为Cat 为向下转型
+        Cat cat2 = (Cat)an;
+
+        // 简单的工厂模式
+        Animate an2 = PetStore.getAnimate("狗");
     }
 }
