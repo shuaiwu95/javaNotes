@@ -1,4 +1,4 @@
-package com.qdgl.test01;
+package com.qdgl.String和StringBuffer;
 
 /**
  * @Auther: lishuaiwu

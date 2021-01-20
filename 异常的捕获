@@ -1,0 +1,70 @@
+一、try catch finally throws:
+异常一般由
+try {} catch (SomeException e) {}
+捕获
+
+我们需要看文档API提示会抛出什么异常 我们就一定要捕获它
+
+一个try 可以跟多个catch
+
+e.printStackTrace() 方法打印异常的堆栈，这个很重要一定要加上
+e.getMessage() 获取异常信息
+
+finally 语句是异常处理的统一出口
+例如出错后没有走异常处理，程序无法关闭，可以在这里处理
+一般用来做垃圾处理，比如说文件的关闭
+
+如果本级方法处理不了异常，可以向上级抛出异常(套娃甩锅大法牛逼)
+void method () throws SomeException1, SomeException2 {
+    // do something
+}
+最牛逼的是 main 方法也能往出抛异常，只要懒得处理，咱就往出抛
+最后没处抛了，编译器就自己抛出堆栈信息了。
+但是我们建议自己处理方法吧，养成良好的编程习惯
+
+二、自定义异常：
+抛出一个异常对象
+throw new Exception("发生了异常")
+这样系统会自动进入try catch
+例如：
+try {
+    int a = 10;
+    if (a == 10) {
+        throw new Exception("发生了异常")
+    }
+} catch (Exception e) {
+
+}
+
+三、异常类的继承，自定义异常类
+class MyException extends Exception {
+    public MyException() {}
+    public MyException(String msg) {
+        super(msg);
+    }
+}
+
+定义方法的时候
+public void method () throws MyException {
+    // do something
+    throw new MyException("xxxxxx")
+}
+
+调用方法的时候
+try {
+    method()
+} catch (Exception e) {
+    e.printStackTrace()
+}
+
+这样也可以：
+try {
+    method()
+} catch (MyException e) {
+    e.printStackTrace()
+}
+
+总结：
+所有JDK的类的异常类都继承于 Exception
+我们可以直接 throw new Exception("xxx") 来自定义异常抛出
+我们也可以抛出继承于Exception的异常类（JDK自带的和自定义的）
