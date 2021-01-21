@@ -1,11 +1,11 @@
-package com.qdgl.test;
+package com.qdgl.suanfa;
 
 import java.util.Arrays;
 
 /**
  * @Auther: lishuaiwu
  * @Date: 2021/1/19 0019
- * @Description: com.qdgl.test 练习 冒泡排序
+ * @Description: com.qdgl.suanfa 练习 冒泡排序
  * @Version: 1.0
  */
 public class Maopaopaixu {
