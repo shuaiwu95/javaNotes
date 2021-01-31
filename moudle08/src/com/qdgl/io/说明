@@ -1,0 +1,7 @@
+输入流：
+InputStream(字节流)
+Reader(字符流)
+
+输出流：
+OutputStream(字节流)
+Writer(字符流)
